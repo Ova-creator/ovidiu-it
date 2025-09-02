@@ -13,34 +13,31 @@ export const viewport = {
 };
 
 export const metadata = {
-  metadataBase: new URL(siteUrl),
-  alternates: { canonical: "/" },
-  title: {
-    default: "Ovidiu.IT — Next.js, SEO & Automation",
-    template: "%s | Ovidiu.IT",
-  },
-  description:
-    "Next.js websites, Technical SEO & automations that actually save time. UK-focused and conversion-first.",
+  title: "Ovidiu.IT — Next.js + SEO & Automation",
+  description: "Affordable web design & SEO in the UK. Next.js expert building fast, secure, SEO-first sites for small businesses and freelancers.",
+  metadataBase: new URL("https://ovidiu.it.com"),
   openGraph: {
     type: "website",
-    url: siteUrl,
+    locale: "en_GB",
+    url: "https://ovidiu.it.com",
     siteName: "Ovidiu.IT",
-    title: "Ovidiu.IT — Next.js, SEO & Automation",
-    description:
-      "Fast, clean, SEO-ready Next.js sites with Technical SEO and automations. UK-focused, conversion-first.",
-    images: [`${siteUrl}/og`], // imagine globală dinamică
+    title: "Ovidiu.IT — Next.js + SEO & Automation",
+    description: "Affordable web design & SEO in the UK. Next.js expert building fast, secure, SEO-first sites for small businesses and freelancers.",
+    images: [
+      {
+        url: "https://ovidiu.it.com/og-default.png",
+        width: 1200,
+        height: 630,
+        alt: "Ovidiu.IT — Web Design & SEO UK",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ovidiu.IT — Next.js, SEO & Automation",
-    description:
-      "Fast, clean, SEO-ready Next.js sites with Technical SEO and automations. UK-focused, conversion-first.",
-    images: [`${siteUrl}/og`],
-  },
-  icons: {
-    icon: "/favicon-16x16.png",
-    shortcut: "/favicon-32x32.png",
-    apple: "/apple-touch-icon.png",
+    site: "@OvidiuIT",
+    title: "Ovidiu.IT — Next.js + SEO & Automation",
+    description: "Affordable web design & SEO in the UK. Next.js expert building fast, secure, SEO-first sites for small businesses and freelancers.",
+    images: ["https://ovidiu.it.com/og-default.png"],
   },
 };
 
