@@ -4,6 +4,13 @@ import SiteHeader from "../components/SiteHeader";
 import ScrollProgressBar from "../components/ScrollProgressBar";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+// app/layout.js
+export const viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0b0b0b" },
+  ],
+};
 
 export const metadata = {
   title: {
