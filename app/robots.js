@@ -1,9 +1,10 @@
 // app/robots.js
-import { siteUrl } from "../lib/site";
+import { abs, siteUrl } from "../lib/site";
 
 export default function robots() {
   return {
-    rules: { userAgent: "*", allow: "/" },
-    sitemap: `${siteUrl}/sitemap.xml`,
+    rules: [{ userAgent: "*", allow: "/" }],
+    sitemap: abs("/sitemap.xml"),
+    host: siteUrl.replace(/^https?:\/\//, ""),
   };
 }

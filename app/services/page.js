@@ -1,10 +1,10 @@
 // app/services/page.js
 import Script from "next/script";
-import QuoteLink from "../../components/QuoteLink";
 
 export const metadata = {
   title: "Services — Web, SEO, Automation | Ovidiu.IT",
-  description: "Websites in Next.js, technical SEO, and admin automations.",
+  description:
+    "Websites in Next.js, technical SEO, and admin automations for UK businesses.",
   alternates: { canonical: "/services" },
 };
 
@@ -40,7 +40,6 @@ export default function ServicesPage() {
 
   return (
     <>
-      {/* JSON-LD: generic Service page + FAQ (nu afectează UI) */}
       <Script
         id="jsonld-services"
         type="application/ld+json"
@@ -61,28 +60,42 @@ export default function ServicesPage() {
       />
 
       <main className="container mx-auto px-4 py-12">
-        <section className="hero-card card-luxe mb-10">
-          <p className="text-sm text-zinc-300 mb-2">Ovidiu.IT — Next.js + SEO</p>
-          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
+        {/* HERO — mobile friendly */}
+        <section className="hero-card card-luxe mb-10 text-center">
+          <p className="text-xs sm:text-sm text-zinc-300 mb-2">
+            Ovidiu.IT — Next.js + SEO
+          </p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.15] mx-auto max-w-3xl">
             Services: <span className="text-[var(--accent)]">Web</span>, SEO &amp; Automation
           </h1>
-          <p className="mt-3 text-zinc-300">
-            Fast, clean, SEO-ready websites, technical SEO foundations, and automations that save hours.
+          <p className="mt-3 text-zinc-300 mx-auto max-w-2xl">
+            Fast, clean, SEO-ready websites, technical SEO foundations, and
+            automations that save hours.
           </p>
-          <div className="mt-6 flex gap-3 justify-center">
-            <a href="/contact" className="btn-primary">Get a Quote</a>
-            <a href="/projects" className="btn-ghost">View Projects</a>
-            {/* linkuri interne vizibile către landing-urile UK */}
-            <a href="/services/web-design-uk" className="btn-ghost">Website Design UK</a>
-            <a href="/services/seo-uk" className="btn-ghost">SEO Services UK</a>
-            <a href="/services/automation-uk" className="btn-ghost">Automation UK</a>
+
+          <div className="mt-6 grid grid-cols-2 sm:flex sm:flex-wrap gap-3 justify-center">
+            <a href="/contact" className="btn-primary w-full sm:w-auto">
+              Get a Quote
+            </a>
+            <a href="/projects" className="btn-ghost w-full sm:w-auto">
+              View Projects
+            </a>
+            <a href="/services/web-design-uk" className="btn-ghost w-full sm:w-auto">
+              Website Design UK
+            </a>
+            <a href="/services/seo-uk" className="btn-ghost w-full sm:w-auto">
+              SEO Services UK
+            </a>
+            <a href="/services/automation-uk" className="btn-ghost w-full sm:w-auto">
+              Automation UK
+            </a>
           </div>
         </section>
 
-        {/* Cards servicii — păstrat stilul; adăugat 3 carduri UK dedicate */}
+        {/* Cards servicii */}
         <section className="grid md:grid-cols-3 gap-6">
           <article className="card-luxe">
-            <h3 className="text-xl font-semibold mb-2">Next.js Websites</h3>
+            <h3 className="text-lg sm:text-xl font-semibold mb-2">Next.js Websites</h3>
             <ul className="list-disc ml-5 space-y-1 text-zinc-300">
               <li>App Router + Tailwind + a11y</li>
               <li>Clean UI components & CTAs</li>
@@ -91,7 +104,7 @@ export default function ServicesPage() {
           </article>
 
           <article className="card-luxe">
-            <h3 className="text-xl font-semibold mb-2">Technical SEO</h3>
+            <h3 className="text-lg sm:text-xl font-semibold mb-2">Technical SEO</h3>
             <ul className="list-disc ml-5 space-y-1 text-zinc-300">
               <li>Metadata & JSON-LD</li>
               <li>Sitemaps & robots tuning</li>
@@ -100,7 +113,7 @@ export default function ServicesPage() {
           </article>
 
           <article className="card-luxe">
-            <h3 className="text-xl font-semibold mb-2">Automation</h3>
+            <h3 className="text-lg sm:text-xl font-semibold mb-2">Automation</h3>
             <ul className="list-disc ml-5 space-y-1 text-zinc-300">
               <li>Secure forms with spam guard</li>
               <li>Sheets dashboards & HTML autoresponder</li>
@@ -108,9 +121,9 @@ export default function ServicesPage() {
             </ul>
           </article>
 
-          {/* UK-specific cards */}
+          {/* UK-specific quick cards */}
           <article className="card-luxe">
-            <h3 className="text-xl font-semibold mb-2">Website Design UK</h3>
+            <h3 className="text-lg sm:text-xl font-semibold mb-2">Website Design UK</h3>
             <p className="text-zinc-300">
               Affordable to advanced — Next.js websites for UK businesses.
             </p>
@@ -120,7 +133,7 @@ export default function ServicesPage() {
           </article>
 
           <article className="card-luxe">
-            <h3 className="text-xl font-semibold mb-2">SEO Services UK</h3>
+            <h3 className="text-lg sm:text-xl font-semibold mb-2">SEO Services UK</h3>
             <p className="text-zinc-300">
               Technical + content SEO with monthly retainers and clear KPIs.
             </p>
@@ -130,7 +143,7 @@ export default function ServicesPage() {
           </article>
 
           <article className="card-luxe">
-            <h3 className="text-xl font-semibold mb-2">Automation UK</h3>
+            <h3 className="text-lg sm:text-xl font-semibold mb-2">Automation UK</h3>
             <p className="text-zinc-300">
               Google Apps Script + Sheets + Email to replace manual work.
             </p>

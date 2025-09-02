@@ -1,6 +1,5 @@
 // app/page.js
 import Script from "next/script";
-import QuoteLink from "../components/QuoteLink";
 import { posts } from "../lib/blogPosts";
 
 export const metadata = {
@@ -58,7 +57,7 @@ export const metadata = {
 export default function HomePage() {
   return (
     <main className="container mx-auto px-4 py-10">
-      {/* JSON-LD — Organization + WebSite + Service */}
+      {/* JSON-LD */}
       <Script id="ld-json-home" type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
@@ -101,111 +100,119 @@ export default function HomePage() {
               serviceType: "Website Design & SEO",
               provider: { "@id": "https://ovidiu.it.com/#org" },
               areaServed: { "@type": "Country", name: "United Kingdom" },
-              hasOfferCatalog: {
-                "@type": "OfferCatalog",
-                name: "Web & SEO Packages (UK)",
-                itemListElement: [
-                  {
-                    "@type": "Offer",
-                    name: "Website Design (Next.js)",
-                    url: "https://ovidiu.it.com/services/web-design-uk",
-                    priceCurrency: "GBP",
-                    availability: "https://schema.org/InStock",
-                  },
-                  {
-                    "@type": "Offer",
-                    name: "SEO Services (UK)",
-                    url: "https://ovidiu.it.com/services/seo-uk",
-                    priceCurrency: "GBP",
-                    availability: "https://schema.org/InStock",
-                  },
-                  {
-                    "@type": "Offer",
-                    name: "Website Automation (GAS + Sheets)",
-                    url: "https://ovidiu.it.com/services/automation-uk",
-                    priceCurrency: "GBP",
-                    availability: "https://schema.org/InStock",
-                  },
-                ],
-              },
             },
           ],
         })}
       </Script>
 
-      {/* HERO existent */}
-      <section className="hero-card card-luxe mb-10">
-        <p className="text-sm text-zinc-300 mb-2">Ovidiu.IT — Next.js + SEO</p>
-        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
-          Building <span className="text-[var(--accent)]">Websites</span> that Perform &amp; Convert
-        </h1>
-        <p className="mt-3 text-zinc-300">
-          Premium, UX-ready websites in Next.js — measured SEO and automations that save hours.
+      {/* HERO — mobile friendly */}
+      <section className="hero-card card-luxe mb-10 text-center">
+        <p className="text-xs sm:text-sm text-zinc-300 mb-2">
+          Ovidiu.IT — Next.js + SEO
         </p>
-        <div className="mt-6 flex gap-3 justify-center">
-          <a href="/services" className="btn-primary">See Website Creation</a>
-          <a href="/projects" className="btn-ghost">View Projects</a>
-          <a href="/contact" className="btn-ghost">Start Your Project</a>
-          <a href="/blog" className="btn-ghost">Blog</a>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.15] mx-auto max-w-3xl">
+          Building <span className="text-[var(--accent)]">Websites</span> that
+          Perform &amp; Convert
+        </h1>
+        <p className="mt-3 text-zinc-300 mx-auto max-w-2xl">
+          Premium, UX-ready websites in Next.js — measured SEO and automations
+          that save hours.
+        </p>
+
+        {/* CTAs — pe mobil devin grid 2 col; full-width buttons */}
+        <div className="mt-6 grid grid-cols-2 sm:flex sm:flex-wrap gap-3 justify-center">
+          <a href="/services" className="btn-primary w-full sm:w-auto">
+            See Website Creation
+          </a>
+          <a href="/projects" className="btn-ghost w-full sm:w-auto">
+            View Projects
+          </a>
+          <a href="/contact" className="btn-ghost w-full sm:w-auto">
+            Start Your Project
+          </a>
+          <a href="/blog" className="btn-ghost w-full sm:w-auto">
+            Blog
+          </a>
         </div>
       </section>
 
-      {/* GRID existent */}
+      {/* GRID servicii */}
       <section className="grid md:grid-cols-3 gap-6">
         <article className="card-luxe">
-          <h3 className="text-xl font-semibold mb-2">Next.js Websites</h3>
-          <p className="text-zinc-300">Design → Dev → Deploy on Vercel. App Router, Tailwind, accessibility, performance.</p>
+          <h3 className="text-lg sm:text-xl font-semibold mb-2">Next.js Websites</h3>
+          <p className="text-zinc-300">
+            Design → Dev → Deploy on Vercel. App Router, Tailwind,
+            accessibility, performance.
+          </p>
         </article>
         <article className="card-luxe">
-          <h3 className="text-xl font-semibold mb-2">Technical SEO</h3>
-          <p className="text-zinc-300">CWV, metadata/OG/Twitter, JSON-LD, sitemaps & robots, clean IA.</p>
+          <h3 className="text-lg sm:text-xl font-semibold mb-2">Technical SEO</h3>
+          <p className="text-zinc-300">
+            CWV, metadata/OG/Twitter, JSON-LD, sitemaps & robots, clean IA.
+          </p>
         </article>
         <article className="card-luxe">
-          <h3 className="text-xl font-semibold mb-2">Automation</h3>
-          <p className="text-zinc-300">GAS + Sheets + Email automations to replace manual work.</p>
+          <h3 className="text-lg sm:text-xl font-semibold mb-2">Automation</h3>
+          <p className="text-zinc-300">
+            GAS + Sheets + Email automations to replace manual work.
+          </p>
         </article>
       </section>
 
-      {/* Services in the UK */}
+      {/* UK services quick-links */}
       <section className="card-luxe mt-10">
-        <h2 className="text-2xl font-semibold mb-3">
+        <h2 className="text-xl sm:text-2xl font-semibold mb-3">
           Services in the <span className="text-[var(--accent)]">UK</span>
         </h2>
         <p className="text-zinc-300 mb-4">
           UK-focused services with transparent pricing ranges and fast delivery.
         </p>
-        <div className="flex flex-col sm:flex-row gap-3">
-          <a href="/services/web-design-uk" className="btn-ghost">Website Design UK</a>
-          <a href="/services/seo-uk" className="btn-ghost">SEO Services UK</a>
-          <a href="/services/automation-uk" className="btn-ghost">Automation UK</a>
+        <div className="grid grid-cols-2 sm:flex gap-3">
+          <a href="/services/web-design-uk" className="btn-ghost w-full sm:w-auto">
+            Website Design UK
+          </a>
+          <a href="/services/seo-uk" className="btn-ghost w-full sm:w-auto">
+            SEO Services UK
+          </a>
+          <a href="/services/automation-uk" className="btn-ghost w-full sm:w-auto">
+            Automation UK
+          </a>
         </div>
       </section>
 
-      {/* 🆕 Featured posts — ÎNĂUNTRU, o singură dată */}
+      {/* Featured posts */}
       <section className="mt-10">
-        <h2 className="text-2xl font-semibold mb-3">
+        <h2 className="text-xl sm:text-2xl font-semibold mb-3">
           Featured <span className="text-[var(--accent)]">Posts</span>
         </h2>
         <div className="grid md:grid-cols-3 gap-6">
           {posts.slice(0, 3).map((p) => (
             <article key={p.slug} className="card-luxe">
-              <h3 className="text-xl font-semibold mb-1">
-                <a href={`/blog/${p.slug}`} className="hover:underline">{p.title}</a>
+              <h3 className="text-lg sm:text-xl font-semibold mb-1">
+                <a href={`/blog/${p.slug}`} className="hover:underline">
+                  {p.title}
+                </a>
               </h3>
               <p className="text-zinc-400 text-sm mb-2">
                 {new Date(p.date).toLocaleDateString("en-GB", {
-                  year: "numeric", month: "long", day: "numeric",
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
                 })}
               </p>
               <p className="text-zinc-300">{p.description}</p>
               <div className="mt-3">
-                <a href={`/blog/${p.slug}`} className="btn-ghost">Read article</a>
+                <a href={`/blog/${p.slug}`} className="btn-ghost">
+                  Read article
+                </a>
               </div>
             </article>
           ))}
         </div>
         <div className="mt-6">
-          <a href="/blog" className="btn-ghost">View all posts</a>
+          <a href="/blog" className="btn-ghost">
+            View all posts
+          </a>
         </div>
       </section>
     </main>
