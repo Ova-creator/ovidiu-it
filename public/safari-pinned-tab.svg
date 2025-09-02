@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100%" height="100%" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <!-- Black shapes act as the mask for Safari pinned tab -->
+  <rect x="4" y="4" width="56" height="56" rx="12" fill="#000000"/>
+  <!-- "I" -->
+  <rect x="19" y="16" width="6" height="32" fill="#000000"/>
+  <!-- "T" -->
+  <rect x="29" y="16" width="22" height="6" fill="#000000"/>
+  <rect x="39" y="22" width="6" height="26" fill="#000000"/>
+</svg>
